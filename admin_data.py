@@ -1,3 +1,10 @@
+import random
+import string
+
+def user_generator():
+    
+
+
 user_data = {
     "username": "bannana",
     "password": "Eater123",
@@ -5,3 +12,4 @@ user_data = {
     "first_name": "John",
     "last_name": "Smith"
 }
+
