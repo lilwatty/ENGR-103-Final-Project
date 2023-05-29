@@ -25,6 +25,29 @@ surnames = [
     'Reed', 'Cook', 'Morgan', 'Bell'
 ]
 
+classes = [
+    "English Literature",
+    "Algebra",
+    "Biology",
+    "World History",
+    "Spanish",
+    "Physical Education",
+    "Computer Science",
+    "Art",
+    "Music",
+    "Chemistry",
+    "Geometry",
+    "US History",
+    "French",
+    "Health Education",
+    "Physics",
+    "Statistics",
+    "Calculus",
+    "Economics",
+    "Psychology",
+    "Government"
+]
+
 
 def generate_sample_student_data(enrollment):
     sample_student_data = []
@@ -34,16 +57,17 @@ def generate_sample_student_data(enrollment):
             "sex": sex,
             "first_name": generate_first_name(sex),
             "last_name": generate_surname(),
-            "DOB": assign_DOB()
+            "DOB": assign_DOB(),
+            "schedule": generate_schedule(),
+            "grades": generate_grade()
         }
         sample_student_data.append(student)
-    print(sample_student_data)
+    return (sample_student_data)
 
 
 """
 "ID": generate_ID(),
-"schedule": generate_schedule(),
-"grades": auto_grader()
+
 """
 
 
@@ -88,7 +112,43 @@ def assign_DOB():
 
     dob = datetime.datetime(year, month, day)
     dob = dob.strftime("%m/%d/%Y")
+
     return (dob)
 
 
-generate_sample_student_data(1)
+def generate_schedule():
+    student_schedule = []
+    i = 1
+    max_length = 6
+    while i <= max_length:
+        new_class = random.choice(classes)
+        if unique_list_check(new_class, student_schedule) == True:
+            student_schedule.append(new_class)
+            i += 1
+        else:
+            continue
+
+    return student_schedule
+
+
+def unique_list_check(item, list):
+    if list.count(item) >= 1:
+        return False
+    else:
+        return True
+
+
+def generate_grade():
+    grade_list = []
+    potential = ['F', 'D', 'C', 'B', 'A']
+    weights = [1, 2, 3, 2, 1]
+
+    for i in range(6):
+        grade = random.choices(potential, weights)[0]
+        grade_list.append(grade)
+
+    return (grade_list)
+
+
+enrollment = int(input("Inital Enrollment: "))
+student_registry = generate_sample_student_data(enrollment)
