@@ -1,60 +1,33 @@
+from tkinter import Tk, Label, Frame
 from data.data_generator import student_registry
-from login import user_data
 
+def display_report_card(student_id):
+    # Get the student details from the student registry
+    student = student_registry.get_student_by_id(student_id)
 
-def student_search():
-    searched_student = input("Enter student first and last name: ")
-    first_name, last_name = split_name(searched_student)
-    student_info = fetch_data(first_name, last_name, student_registry)
+    # Create a Tkinter window
+    window = Tk()
+    window.title("Report Card")
 
-    if student_info is None:
-        student_search()
+    # Create a frame to hold the report card information
+    frame = Frame(window)
+    frame.pack()
 
-    elif student_info['active'] is False and user_data["permissions"] == "teacher":
-        print("Student not found in current registry.")
+    # Create labels to display the student's information
+    Label(frame, text="Name:").grid(row=0, column=0)
+    Label(frame, text=student.name).grid(row=0, column=1)
 
-    else:
-        print(student_info)
-        show_report_card(student_info)
+    Label(frame, text="ID:").grid(row=1, column=0)
+    Label(frame, text=student.id).grid(row=1, column=1)
 
-        return student_info
+    Label(frame, text="Grade:").grid(row=2, column=0)
+    Label(frame, text=student.grade).grid(row=2, column=1)
 
-
-def split_name(name):
-    try:
-        full_name = name.lower().rsplit(" ")
-        first = full_name[0]
-        last = full_name[1]
-    except:
-        print("Enter First and Last name.")
-        student_search()
-    return first, last
-
-
-def fetch_data(attempt_first_name, attempt_last_name, data_list):
-    for student in data_list:
-        student_first_name = student["first_name"]
-        student_last_name = student["last_name"]
-
-        if student_first_name.lower() == attempt_first_name.lower() and student_last_name.lower() == attempt_last_name.lower():
-            return student
-
-    print("Student not found.")
-    return None
-
-
-def show_report_card(student_info):
-    if "report_card" in student_info:
-        report_card = student_info["report_card"]
-        print("\nReport Card:")
-        for subject, grade in report_card.items():
-            print(f"{subject}: {grade}")
-    else:
-        print("\nNo report card available for this student.")
-
-
+    # Display the window
+    window.mainloop()
 def main():
-    student_search()
+    student_id = input("Enter student ID: ")
+    display_report_card(student_id)
 
-
-main()
+if __name__ == "__main__":
+    main()
