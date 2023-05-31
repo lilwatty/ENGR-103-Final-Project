@@ -1,4 +1,11 @@
-from admin_data import user_data
+user_data = {
+    "username": "123",
+    "password": "123",
+    "first_name": "sample",
+    "last_name": "sample",
+    "subject": "english",
+    "permissions": "teacher"
+}
 
 
 def login():
@@ -14,8 +21,7 @@ def login():
         for i in user_data:
             if user_attempt == user_data["username"]:
                 if password_attempt == user_data["password"]:
-                    print(f'Welcome {user_data["first_name"]}')
-                    break
+                    return (i)
 
         else:
             login_attempts += 1

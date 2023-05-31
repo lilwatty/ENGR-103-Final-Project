@@ -54,12 +54,13 @@ def generate_sample_student_data(enrollment):
     for i in range(enrollment):
         sex = assign_sex()
         student = {
-            "sex": sex,
             "first_name": generate_first_name(sex),
             "last_name": generate_surname(),
+            "sex": sex,
             "DOB": assign_DOB(),
             "schedule": generate_schedule(),
-            "grades": generate_grade()
+            "grades": generate_grade(),
+            "active": student_status()
         }
         sample_student_data.append(student)
     return (sample_student_data)
@@ -69,6 +70,13 @@ def generate_sample_student_data(enrollment):
 "ID": generate_ID(),
 
 """
+
+
+def student_status():
+    if random.random() >= .2:
+        return True
+    else:
+        return False
 
 
 def assign_sex():
@@ -150,5 +158,7 @@ def generate_grade():
     return (grade_list)
 
 
-enrollment = int(input("Inital Enrollment: "))
+enrollment = int(input("Number of students."))
+
 student_registry = generate_sample_student_data(enrollment)
+print(student_registry)
