@@ -2,7 +2,7 @@ from data.data_file import student_registry
 from data.data_file import teacher_list
 from data.data_file import admin
 
-from .student_search import student_search
+from student_search import student_search
 
 
 def main():

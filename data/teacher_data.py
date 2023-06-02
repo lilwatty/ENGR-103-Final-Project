@@ -1,10 +1,8 @@
 import random
 
-from student_data import classes
+from common_functions import *
 
-from student_data import assign_sex
-from student_data import generate_first_name
-from student_data import generate_surname
+from raw_data import girls_names, boys_names, surnames, classes
 
 
 def teacher_assignment():
@@ -13,8 +11,8 @@ def teacher_assignment():
 
     for i in range(len(classes)):
         sex = assign_sex()
-        first_name = generate_first_name(sex)
-        last_name = generate_surname()
+        first_name = generate_first_name(sex, boys_names, girls_names)
+        last_name = generate_surname(surnames)
         teacher = {
             "username": generate_username(first_name, last_name),
             "password": generate_password(),

@@ -1,14 +1,5 @@
-user_data = {
-    "username": "123",
-    "password": "123",
-    "first_name": "sample",
-    "last_name": "sample",
-    "subject": "english",
-    "permissions": "teacher"
-}
 
-
-def login():
+def login(user_data):
 
     login_attempts = 0
     max_attempts = 3

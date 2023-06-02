@@ -1,42 +1,10 @@
 import random
 import datetime
 
+from raw_data import girls_names, boys_names, surnames, classes
 
-girls_names = [
-    'Emma', 'Olivia', 'Ava', 'Isabella', 'Sophia', 'Mia', 'Charlotte', 'Amelia',
-    'Harper', 'Evelyn', 'Abigail', 'Emily', 'Elizabeth', 'Mila', 'Ella', 'Avery',
-    'Sofia', 'Camila', 'Aria', 'Scarlett'
-]
 
-boys_names = [
-    'Liam', 'Noah', 'William', 'James', 'Oliver', 'Benjamin', 'Elijah', 'Lucas',
-    'Henry', 'Alexander', 'Sebastian', 'Jack', 'Aiden', 'Owen', 'Caleb', 'Andrew',
-    'Daniel', 'Matthew', 'Joseph', 'Levi'
-]
-
-surnames = [
-    'Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'Wilson',
-    'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin',
-    'Thompson', 'Garcia', 'Martinez', 'Robinson', 'Clark', 'Rodriguez', 'Lewis',
-    'Lee', 'Walker', 'Hall', 'Allen', 'Young', 'Hernandez', 'King', 'Wright',
-    'Lopez', 'Hill', 'Scott', 'Green', 'Adams', 'Baker', 'Gonzalez', 'Nelson',
-    'Carter', 'Mitchell', 'Perez', 'Roberts', 'Turner', 'Phillips', 'Campbell',
-    'Parker', 'Evans', 'Edwards', 'Collins', 'Stewart', 'Sanchez', 'Morris', 'Rogers',
-    'Reed', 'Cook', 'Morgan', 'Bell'
-]
-
-classes = [
-    "English Literature",
-    "Biology",
-    "World History",
-    "Computer Science",
-    "Chemistry",
-    "US History",
-    "Physics",
-    "Statistics",
-    "Calculus",
-    "Psychology",
-]
+from common_functions import *
 
 
 def generate_sample_student_data(enrollment):
@@ -44,8 +12,8 @@ def generate_sample_student_data(enrollment):
     for i in range(enrollment):
         sex = assign_sex()
         student = {
-            "first_name": generate_first_name(sex),
-            "last_name": generate_surname(),
+            "first_name": generate_first_name(sex, boys_names, girls_names),
+            "last_name": generate_surname(surnames),
             "sex": sex,
             "DOB": assign_DOB(),
             "schedule": generate_schedule(),
@@ -67,27 +35,6 @@ def student_status():
         return True
     else:
         return False
-
-
-def assign_sex():
-    odds = random.random()
-    if odds <= .534:
-        sex = "Male"
-    else:
-        sex = "Female"
-    return sex
-
-
-def generate_first_name(sex):
-    if sex == "Male":
-        first_name = random.choice(boys_names)
-    else:
-        first_name = random.choice(girls_names)
-    return first_name
-
-
-def generate_surname():
-    return random.choice(surnames)
 
 
 def day_month_match(month):
