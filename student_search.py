@@ -1,4 +1,4 @@
-from data.data_generator import (student_registry)
+from data.student_data import student_registry
 from login import user_data
 
 

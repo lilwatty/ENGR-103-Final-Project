@@ -27,25 +27,15 @@ surnames = [
 
 classes = [
     "English Literature",
-    "Algebra",
     "Biology",
     "World History",
-    "Spanish",
-    "Physical Education",
     "Computer Science",
-    "Art",
-    "Music",
     "Chemistry",
-    "Geometry",
     "US History",
-    "French",
-    "Health Education",
     "Physics",
     "Statistics",
     "Calculus",
-    "Economics",
     "Psychology",
-    "Government"
 ]
 
 
@@ -81,7 +71,7 @@ def student_status():
 
 def assign_sex():
     odds = random.random()
-    if odds <= .55:
+    if odds <= .534:
         sex = "Male"
     else:
         sex = "Female"
@@ -158,7 +148,6 @@ def generate_grade():
     return (grade_list)
 
 
-enrollment = int(input("Number of students."))
+enrollment = 100
 
 student_registry = generate_sample_student_data(enrollment)
-print(student_registry)
