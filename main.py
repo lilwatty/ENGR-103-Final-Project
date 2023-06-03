@@ -1,13 +1,27 @@
-from data.data_file import student_registry
-from data.data_file import teacher_list
-from data.data_file import admin
+from login import login
+from student_search import search_student
 
-from student_search import student_search
+from local_data.data import staff_registry, student_registry
+
+sample_data = [
+    {
+        "username": "123",
+        "password": "123",
+        "first_name": "Daniel",
+        "last_name": "Perez",
+        "subject": "Statistics",
+        "permissions": "teacher"
+    },
+]
+
+
+for i in sample_data:
+    staff_registry.append(i)
 
 
 def main():
-    student_search()
+    user_data = login(staff_registry)
+    search_student(user_data, student_registry)
 
 
 main()
-print(student_registry, teacher_list, admin)

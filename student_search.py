@@ -1,16 +1,17 @@
-from data.student_data import student_registry
-from login import user_data
+
+from local_data import data
+students = data.student_registry
 
 
-def student_search():
+def search_student(user_data, list):
 
     searched_student = input("Enter student first and last name: ")
 
     first_name, last_name = split_name(searched_student)
-    student_info = fetch_data(first_name, last_name, student_registry)
+    student_info = fetch_data(first_name, last_name, list)
 
     if student_info == None:
-        student_search()
+        search_student()
 
     elif student_info['active'] == False and user_data["permissions"] == "teacher":
 
@@ -33,7 +34,7 @@ def split_name(name):
 
     except:
         print("Enter First and Last name.")
-        student_search()
+        search_student()
 
     return first, last
 
@@ -55,10 +56,3 @@ def fetch_data(attempt_first_name, attempt_last_name, list):
 
     print("Student not found.")
     return None
-
-
-def main():
-    student_search()
-
-
-main()

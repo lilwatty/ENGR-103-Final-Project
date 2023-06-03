@@ -74,13 +74,10 @@ def split_string(string):
 
 
 def generate_password():
-    return ("Password")
+    password = ''
+    for i in range(6):
+        password += str(random.randint(0, 9))
+    return password
 
 
-teacher_list = teacher_assignment()
-
-
-"""
-print("Teachers: ")
-print(*teacher_list, sep=("\n"))
-"""
+# teacher_list = teacher_assignment()

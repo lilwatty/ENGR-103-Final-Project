@@ -1,7 +1,8 @@
+
 import random
 import datetime
 
-from raw_data import girls_names, boys_names, surnames, classes
+from .raw_data import girls_names, boys_names, surnames, classes
 
 
 from common_functions import *
@@ -14,6 +15,7 @@ def generate_sample_student_data(enrollment):
         student = {
             "first_name": generate_first_name(sex, boys_names, girls_names),
             "last_name": generate_surname(surnames),
+            "ID": generate_id(),
             "sex": sex,
             "DOB": assign_DOB(),
             "schedule": generate_schedule(),
@@ -24,10 +26,10 @@ def generate_sample_student_data(enrollment):
     return (sample_student_data)
 
 
-"""
-"ID": generate_ID(),
-
-"""
+def generate_id():
+    randnums = str(random.randint(100000, 999999))
+    id = "934" + randnums
+    return id
 
 
 def student_status():
@@ -96,5 +98,4 @@ def generate_grade():
 
 
 enrollment = 100
-
-student_registry = generate_sample_student_data(enrollment)
+# student_registry = generate_sample_student_data(enrollment)

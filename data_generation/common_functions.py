@@ -26,4 +26,4 @@ def main():
     return assign_sex, generate_first_name, generate_surname
 
 
-main()
+# main()

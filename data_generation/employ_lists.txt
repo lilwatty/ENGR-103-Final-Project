@@ -1,0 +1,97 @@
+[
+    {
+        "username": "perezdan",
+        "password": "886136",
+        "first_name": "Daniel",
+        "last_name": "Perez",
+        "subject": "Statistics",
+        "permissions": "teacher"
+    },
+    {
+        "username": "campbmia",
+        "password": "260717",
+        "first_name": "Mia",
+        "last_name": "Campbell",
+        "subject": "Chemistry",
+        "permissions": "teacher"
+    },
+    {
+        "username": "sanchsca",
+        "password": "185168",
+        "first_name": "Scarlett",
+        "last_name": "Sanchez",
+        "subject": "English Literature",
+        "permissions": "teacher"
+    },
+    {
+        "username": "morriisa",
+        "password": "455161",
+        "first_name": "Isabella",
+        "last_name": "Morris",
+        "subject": "Calculus",
+        "permissions": "teacher"
+    },
+    {
+        "username": "clarkowe",
+        "password": "775293",
+        "first_name": "Owen",
+        "last_name": "Clark",
+        "subject": "Psychology",
+        "permissions": "teacher"
+    },
+    {
+        "username": "williand",
+        "password": "957426",
+        "first_name": "Andrew",
+        "last_name": "Williams",
+        "subject": "Computer Science",
+        "permissions": "teacher"
+    },
+    {
+        "username": "martiari",
+        "password": "701236",
+        "first_name": "Aria",
+        "last_name": "Martinez",
+        "subject": "Physics",
+        "permissions": "teacher"
+    },
+    {
+        "username": "anderave",
+        "password": "199518",
+        "first_name": "Avery",
+        "last_name": "Anderson",
+        "subject": "World History",
+        "permissions": "teacher"
+    },
+    {
+        "username": "lewisell",
+        "password": "652018",
+        "first_name": "Ella",
+        "last_name": "Lewis",
+        "subject": "Biology",
+        "permissions": "teacher"
+    },
+    {
+        "username": "leesop",
+        "password": "122691",
+        "first_name": "Sophia",
+        "last_name": "Lee",
+        "subject": "US History",
+        "permissions": "teacher"
+    },
+    {
+        "username": "tekadrad",
+        "password": "radhika123",
+        "first_name": "Radhika",
+        "last_name": "Tekade",
+        "subject": "Computer Science",
+        "permissions": "teacher"
+    },
+    {
+        "username": "sharmdee",
+        "password": "deepak123",
+        "first_name": "Deepak",
+        "last_name": "Sharma",
+        "permissions": "admin"
+    }
+]

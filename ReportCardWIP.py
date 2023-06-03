@@ -1,5 +1,5 @@
 from tkinter import Tk, Label, Frame
-from data.data_generator import student_registry
+from data_generation.data_generator import student_registry
 from login import user_data
 
 
@@ -27,9 +27,12 @@ def display_report_card(student_id):
 
     # Display the window
     window.mainloop()
+
+
 def main():
     student_id = input("Enter student ID: ")
     display_report_card(student_id)
+
 
 if __name__ == "__main__":
     main()
