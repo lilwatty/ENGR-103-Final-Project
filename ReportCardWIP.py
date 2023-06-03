@@ -1,6 +1,16 @@
 from tkinter import Tk, Label, Frame
-from data_generation.data_generator import student_registry
-from login import user_data
+from local_data.data import student_registry
+# from login import user_data
+
+user_data = [
+    {
+        "username": "sharmdee",
+        "password": "deepak123",
+        "first_name": "Deepak",
+        "last_name": "Sharma",
+        "permissions": "admin"
+    }
+]
 
 
 def display_report_card(student_id):

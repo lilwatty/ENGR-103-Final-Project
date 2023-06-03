@@ -3,7 +3,7 @@ from student_search import search_student
 
 from local_data.data import staff_registry, student_registry
 
-sample_data = [
+quick_login = [
     {
         "username": "123",
         "password": "123",
@@ -15,7 +15,7 @@ sample_data = [
 ]
 
 
-for i in sample_data:
+for i in quick_login:
     staff_registry.append(i)
 
 

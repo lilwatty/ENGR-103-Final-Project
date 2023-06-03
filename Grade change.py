@@ -1,4 +1,4 @@
-from data_generation.data_generator import student_registry
+from local_data.data import student_registry
 
 
 def change_student_grade(student_id, new_grade):

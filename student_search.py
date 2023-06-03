@@ -47,9 +47,10 @@ def fetch_data(attempt_first_name, attempt_last_name, list):
         student_first_name = i["first_name"]
         student_last_name = i["last_name"]
 
-        if student_first_name.lower() == attempt_first_name.lower() and student_last_name.lower() == attempt_last_name.lower():
-            results.append(i)
-            return results[0]
+        if student_first_name.lower() == attempt_first_name.lower():
+            if student_last_name.lower() == attempt_last_name.lower():
+                results.append(i)
+                return results[0]
 
         else:
             continue
