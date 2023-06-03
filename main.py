@@ -23,5 +23,21 @@ def main():
     user_data = login(staff_registry)
     search_student(user_data, student_registry)
 
+    """
+    If teacher:
+    input change to change the grade of your course.
+    """
+
+    """
+    If admin:
+    input(Add Student) to call add student function
+
+    input(Change Schedule) to call schedule change funciton
+    """
+
+    """
+    Either can print report card function
+    """
+
 
 main()

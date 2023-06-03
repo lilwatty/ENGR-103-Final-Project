@@ -1,16 +1,11 @@
 from tkinter import Tk, Label, Frame
 from local_data.data import student_registry
-# from login import user_data
+from login import user_data
 
-user_data = [
-    {
-        "username": "sharmdee",
-        "password": "deepak123",
-        "first_name": "Deepak",
-        "last_name": "Sharma",
-        "permissions": "admin"
-    }
-]
+"""
+The get_student_by_id isn't necessary, this function will take in the entire dictionary of student information as the input.
+
+"""
 
 
 def display_report_card(student_id):

@@ -1,6 +1,16 @@
 from local_data.data import staff_registry, student_registry
 from generate_id import generate_id
 
+# Max length of a function is 20 lines (not including formating components)
+# Divide the logic up onto separate function
+# Also, it is generally better practice to limit yourself to no more than one nested loop.
+# At that point you need to call a function
+
+# Also, the schedule length is not variable, it needs to be no more than 6.
+# You may consider for "i in range(6)" Plus, the students won't have grades when they are
+# First signed up for the class so the grade_match part isn't applicable. Do however make a
+# Blank list of strings "_" would be fine.
+
 
 def enroll_student():
     while True:
