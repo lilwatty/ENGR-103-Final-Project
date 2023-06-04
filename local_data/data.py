@@ -1,7 +1,5 @@
 import json
 
-print("HELLO")
-
 
 def convert_json_to_list(text_file):
 
