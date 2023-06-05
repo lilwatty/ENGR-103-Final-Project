@@ -1,5 +1,9 @@
 from login import login
 from student_search import search_student
+from enroll_student import enroll_student
+from change_grade import change_student_grade
+from report_card_generator import display_report_card
+from schedule_change import schedule_change
 
 from local_data.data import staff_registry, student_registry
 
@@ -20,24 +24,36 @@ for i in quick_login:
 
 
 def main():
-    user_data = login(staff_registry)
-    search_student(user_data, student_registry)
+    user_data, login_status = login(staff_registry)
 
-    """
-    If teacher:
-    input change to change the grade of your course.
-    """
+    while login_status == True:
 
-    """
-    If admin:
-    input(Add Student) to call add student function
+        student = search_student(user_data, student_registry)
 
-    input(Change Schedule) to call schedule change funciton
-    """
+        command = (input("Enter Command: ")).lower()
 
-    """
-    Either can print report card function
-    """
+        if user_data["permissions"] == "teacher":
+
+            if command == 'c':
+
+                change_student_grade(student)
+
+        if user_data["permissions"] == "admin":
+
+            if command == 'e':
+                enroll_student(student)
+
+            elif input == 's':
+                schedule_change(student)
+
+        elif command == 'p':
+            display_report_card(student)
+
+        elif command == 'l':
+            break
+
+        else:
+            print("Invalid Input")
 
 
 main()
