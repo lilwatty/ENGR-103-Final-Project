@@ -1,4 +1,16 @@
 from local_data.data import student_registry
+from login import login
+
+quick_login = [
+    {
+        "username": "123",
+        "password": "123",
+        "first_name": "Daniel",
+        "last_name": "Perez",
+        "subject": "Statistics",
+        "permissions": "teacher"
+    },
+]
 
 # Your code needs to take in the user_data["subject"] as a parameter and only allow the teacher to change
 # the grade for their class. Accessing the student by ID is good. Keep in mind, the teacher would have
