@@ -19,7 +19,7 @@ def enroll_student():
     student_profile = {
         "first_name": first_name,
         "last_name": last_name,
-        "id": generate_id(),
+        "ID": generate_id(),
         "sex": sex,
         "DOB": dob,
         "schedule": schedule,
