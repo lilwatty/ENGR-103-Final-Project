@@ -1,6 +1,15 @@
 from local_data.data import staff_registry, student_registry
 from generate_id import generate_id
 
+#######################################################################
+# Function:
+# Description:
+# Parameters:
+# Return values:
+# Pre-Conditions:
+# Post-Conditions:
+#######################################################################
+
 
 def enroll_student():
     while True:
@@ -26,7 +35,16 @@ def enroll_student():
         "grades": grades,
         "active": True,
     }
-    student_registry.append(student_profile)
+    return student_profile
+
+#######################################################################
+# Function:
+# Description:
+# Parameters:
+# Return values:
+# Pre-Conditions:
+# Post-Conditions:
+#######################################################################
 
 
 def create_schedule():

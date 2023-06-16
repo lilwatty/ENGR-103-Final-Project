@@ -1,7 +1,11 @@
+from test_main import student
+
+from data_generation.raw_data import classes
+
 
 def change_student_schedule(student_info, classes):
 
-    print(classes)  # display the students schedule in array form
+    print(student_info.schedule)  # display the students schedule in array form
 
     # user inputs what class they want to change
     old_class = int(input(
@@ -31,3 +35,6 @@ def change_student_schedule(student_info, classes):
     else:  # If the user enters an invalid input, inform them and exit the
 
         print("Invalid input")
+
+
+change_student_schedule(student)
