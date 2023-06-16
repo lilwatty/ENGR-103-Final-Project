@@ -4,6 +4,9 @@ from student_search import search_student
 from grade_change import grade_change
 # from report_card_generator import display_report_card
 from schedule_change import change_student_schedule
+from logout import logout
+
+from test_report_card import display_report_card
 
 from display_commands import display_commands
 from local_data.data import convert_json_to_list
@@ -28,6 +31,7 @@ for i in quick_login:
 
 
 def main():
+
     user_data, login_status = login(staff_registry)
     user_data = dict(user_data)
 
@@ -50,10 +54,15 @@ def main():
                 student, list(student['schedule']))
 
         elif command == 'e' and user_data["permissions"] == "admin":
+            # new_student = enroll_student()
             pass
 
+        elif command == 'r':
+            display_report_card(student)
+
         elif command == 'l':
-            quit()
+            # logout()
+            pass
         else:
             print("Invalid Input")
 
