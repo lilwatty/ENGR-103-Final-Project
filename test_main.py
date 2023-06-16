@@ -1,10 +1,11 @@
 from login import login
 from student_search import search_student
-from enroll_student import enroll_student
-from change_grade import change_student_grade
-from report_card_generator import display_report_card
-from schedule_change import schedule_change
+# from enroll_student import enroll_student
+from test_grade_change import grade_change
+# from report_card_generator import display_report_card
+# from schedule_change import schedule_change
 
+from display_commands import display_commands
 from local_data.data import convert_json_to_list
 
 staff_registry = convert_json_to_list("local_data/employee_lists.txt")
@@ -16,7 +17,7 @@ quick_login = [
         "password": "123",
         "first_name": "Daniel",
         "last_name": "Perez",
-        "subject": "Statistics",
+        "subject": "Physics",
         "permissions": "teacher"
     },
 ]
@@ -28,10 +29,12 @@ for i in quick_login:
 
 def main():
     user_data, login_status = login(staff_registry)
+    user_data = dict(user_data)
 
+    student = search_student(user_data, student_registry)
+    student = dict(student)
     while login_status == True:
-
-        student = search_student(user_data, student_registry)
+        display_commands(user_data['permissions'])
 
         command = (input("Enter Command: ")).lower()
 
@@ -39,18 +42,9 @@ def main():
 
             if command == 'c':
 
-                change_student_grade(student)
-
-        if user_data["permissions"] == "admin":
-
-            if command == 'e':
-                enroll_student(student)
-
-            elif input == 's':
-                schedule_change(student)
-
-        elif command == 'p':
-            display_report_card(student)
+                grade_list = grade_change(student['schedule'],
+                                          student["grades"], user_data['subject'])
+                print(grade_list)
 
         elif command == 'l':
             break

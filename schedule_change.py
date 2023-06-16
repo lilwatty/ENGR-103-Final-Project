@@ -35,3 +35,6 @@ def change_student_schedule(student_info, classes):
     else:  # If the user enters an invalid input, inform them and exit the
 
         print("Invalid input")
+
+
+change_student_schedule()

@@ -11,7 +11,8 @@ def login(user_data):
         for i in user_data:
             if user_attempt == i["username"]:
                 if password_attempt == i["password"]:
-                    return (i)
+                    logged_in = True
+                    return i, logged_in
 
         else:
             login_attempts += 1

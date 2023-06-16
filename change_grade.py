@@ -29,7 +29,9 @@ def change_student_grade(student_id, new_grade):
 
 
 # User inputs
+"""
 student_id = input("Enter the student ID: ")
 new_grade = input("Enter the new grade: ")
+"""
 
-change_student_grade(student_id, new_grade)
+# change_student_grade(student_id, new_grade)
