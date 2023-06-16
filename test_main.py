@@ -1,9 +1,9 @@
 from login import login
 from student_search import search_student
 # from enroll_student import enroll_student
-from test_grade_change import grade_change
+from grade_change import grade_change
 # from report_card_generator import display_report_card
-# from schedule_change import schedule_change
+from schedule_change import change_student_schedule
 
 from display_commands import display_commands
 from local_data.data import convert_json_to_list
@@ -18,7 +18,7 @@ quick_login = [
         "first_name": "Daniel",
         "last_name": "Perez",
         "subject": "Physics",
-        "permissions": "teacher"
+        "permissions": "admin"
     },
 ]
 
@@ -33,22 +33,27 @@ def main():
 
     student = search_student(user_data, student_registry)
     student = dict(student)
+
     while login_status == True:
         display_commands(user_data['permissions'])
 
         command = (input("Enter Command: ")).lower()
 
-        if user_data["permissions"] == "teacher":
+        if command == 'c' and user_data["permissions"] == "teacher":
+            grade_list = grade_change(
+                student['schedule'], student["grades"], user_data['subject'])
+            student['grades'] = grade_list
+            print(student['grades'])
 
-            if command == 'c':
+        elif command == 'c' and user_data["permissions"] == "admin":
+            new_schedule = change_student_schedule(
+                student, list(student['schedule']))
 
-                grade_list = grade_change(student['schedule'],
-                                          student["grades"], user_data['subject'])
-                print(grade_list)
+        elif command == 'e' and user_data["permissions"] == "admin":
+            pass
 
         elif command == 'l':
-            break
-
+            quit()
         else:
             print("Invalid Input")
 
