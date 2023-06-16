@@ -2402,6 +2402,7 @@
     {
         "first_name": "Adam",
         "last_name": "Watson",
+        "ID": "934472703",
         "sex": "Male",
         "DOB": "04/20/1969",
         "schedule": [
@@ -2419,29 +2420,6 @@
             "A",
             "A-",
             "B+"
-        ],
-        "active": true
-    },
-    {
-        "first_name": "Eilman",
-        "last_name": "Karim",
-        "sex": "Male",
-        "DOB": "01/27/2004",
-        "schedule": [
-            "Physical Education",
-            "Botany",
-            "Gender Studies",
-            "Pilates",
-            "Buisness",
-            "Physics"
-        ],
-        "grades": [
-            "C",
-            "C-",
-            "D",
-            "A+",
-            "C-",
-            "L"
         ],
         "active": true
     }

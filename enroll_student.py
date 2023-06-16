@@ -43,3 +43,6 @@ def create_schedule():
     for i in range(len(schedule)):
         grades.append("_")
     return schedule, grades
+
+
+enroll_student()
