@@ -13,8 +13,8 @@ def display_report_card(student):
 
     # Create labels to display the student's information
     Label(frame, text="Name:").grid(row=0, column=0)
-    Label(frame, text=(student['first_name'] +
-          student['\nlast_name'])).grid(row=0, column=1)
+    Label(frame, text=(student['first_name'] + ' ' +
+          student['last_name'])).grid(row=0, column=1)
 
     Label(frame, text="ID:").grid(row=1, column=0)
     Label(frame, text=student['ID']).grid(row=1, column=1)
@@ -22,7 +22,7 @@ def display_report_card(student):
     Label(frame, text="Classes:").grid(row=2, column=0)
     schedule = student['schedule']
     for i, schedule in enumerate(schedule):
-            Label(frame, text=schedule).grid(row=2 + 1, column=0)
+        Label(frame, text=schedule).grid(row=2 + 1, column=0)
 
     # Display the grades in separate rows
     Label(frame, text="Grades:").grid(row=2, column=1)
