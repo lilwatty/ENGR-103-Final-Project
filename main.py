@@ -54,7 +54,7 @@ def main():
 
         elif command == 'c' and user_data["permissions"] == "admin":
             new_schedule, new_grades = change_student_schedule(
-                student['schedule'], student['grades'])
+                student)
 
         elif command == 'e' and user_data["permissions"] == "admin":
             new_student = enroll_student()
