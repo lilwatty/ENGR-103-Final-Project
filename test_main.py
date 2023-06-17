@@ -3,10 +3,10 @@ from student_search import search_student
 from enroll_student import enroll_student
 from grade_change import grade_change
 # from report_card_generator import display_report_card
-from schedule_change import change_student_schedule
+# from schedule_change import change_student_schedule
 from logout import logout
 
-from test_report_card import display_report_card
+from MaybeBetterLookingReportCard import display_report_card
 
 from display_commands import display_commands
 from local_data.data import convert_json_to_list
