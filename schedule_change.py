@@ -1,30 +1,3 @@
-from data_generation.raw_data import classes
-
-student = {
-    "first_name": "Adam",
-    "last_name": "Watson",
-    "ID": "934472703",
-    "sex": "Male",
-    "DOB": "04/20/1969",
-    "schedule": [
-        "English Literature",
-        "Biology",
-        "Chemistry",
-        "Computer Science",
-        "Calculus",
-        "Physics"
-    ],
-    "grades": [
-        "A",
-        "A",
-        "B+",
-        "A",
-        "A-",
-        "B+"
-    ],
-    "active": True
-}
-
 def change_student_schedule(student, classes):
 
     print(student['schedule'])  # display the students schedule in array form
@@ -53,9 +26,6 @@ def change_student_schedule(student, classes):
         student['schedule'][old_class] = classes[new_class]
         # wipe student's grade data for that class slot
         student['grades'][old_class] = clear_grade
-
-        print(student['schedule'])
-        print(student['grades'])
 
     else:  # If the user enters an invalid input, inform them and exit the
 
