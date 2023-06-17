@@ -28,7 +28,7 @@ def display_report_card(student):
     Label(frame, text="Grades:").grid(row=2, column=1)
     grades = student['grades']
     for i, grade in enumerate(grades):
-        Label(frame, text=grade).grid(row=2 + i, column=1)
+        Label(frame, text=grade).grid(row=3 + i, column=1)
 
     # Display the window
     window.mainloop()
