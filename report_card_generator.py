@@ -20,9 +20,9 @@ def display_report_card(student):
     Label(frame, text=student['ID']).grid(row=1, column=1)
 
     Label(frame, text="Classes:").grid(row=2, column=0)
-    schedule = student['schedule']
-    for i, schedule in enumerate(schedule):
-            Label(frame, text=schedule).grid(row=2 + 1, column=0)
+    classes = student['classes']
+    for i, classes in enumerate(classes):
+            Label(frame, text=classes).grid(row=2 + 1, column=0)
 
     # Display the grades in separate rows
     Label(frame, text="Grades:").grid(row=2, column=1)
