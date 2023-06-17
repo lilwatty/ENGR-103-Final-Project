@@ -33,7 +33,9 @@ def split_name(name):
         last = full_name[1]
 
     except:
+
         return split_name(input("Enter First and Last name: "))
+
     return first, last
 
 
