@@ -9,7 +9,7 @@ from enroll_student import enroll_student
 from grade_change import grade_change
 
 from login import login
-from logout import logout
+from save_changes import save_dict_list_to_json
 
 # from schedule_change import change_student_schedule
 
@@ -24,7 +24,7 @@ quick_login = [
         "first_name": "Daniel",
         "last_name": "Perez",
         "subject": "Physics",
-        "permissions": "admin"
+        "permissions": "teacher"
     },
 ]
 
@@ -64,7 +64,9 @@ def main():
             display_report_card(student)
 
         elif command == 'l':
-            quit()
+            save_dict_list_to_json(
+                student_registry, "local_data/student_files.txt")
+            login_status = False
 
         else:
             print("Invalid Input")
