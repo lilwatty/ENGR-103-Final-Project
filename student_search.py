@@ -5,21 +5,21 @@ students = data.student_registry
 
 def search_student(user_data, list):
 
-    searched_student = input("Enter student first and last name: ")
+    searched_student = input("Enter student first and last name: ") # takes first and last name as input
 
     first_name, last_name = split_name(searched_student)
-    student_info = fetch_data(first_name, last_name, list)
+    student_info = fetch_data(first_name, last_name, list) #finds student with given info
 
     if student_info == None:
         search_student()
 
     elif student_info['active'] == False and user_data["permissions"] == "teacher":
 
-        print("Student not found in current registry.")
+        print("Student not found in current registry.") # bad case given if no student is found
 
     else:
 
-        print(student_info)
+        print(student_info) # good case where student is found and information is printed
 
         return student_info
 
@@ -27,7 +27,7 @@ def search_student(user_data, list):
 def split_name(name):
 
     try:
-        full_name = name.lower().rsplit(" ")
+        full_name = name.lower().rsplit(" ") # program will work even if there is no space between first and last name
 
         first = full_name[0]
         last = full_name[1]
@@ -50,10 +50,10 @@ def fetch_data(attempt_first_name, attempt_last_name, list):
         if student_first_name.lower() == attempt_first_name.lower():
             if student_last_name.lower() == attempt_last_name.lower():
                 results.append(i)
-                return results[0]
+                return results[0] # will return if no results are matching
 
         else:
             continue
 
-    print("Student not found.")
+    print("Student not found.") # uh oh bad case no student, will return
     return None
