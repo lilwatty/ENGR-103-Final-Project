@@ -3,7 +3,7 @@ from student_search import search_student
 from enroll_student import enroll_student
 from grade_change import grade_change
 # from report_card_generator import display_report_card
-# from schedule_change import change_student_schedule
+from schedule_change import change_student_schedule
 from logout import logout
 
 from MaybeBetterLookingReportCard import display_report_card
@@ -50,8 +50,8 @@ def main():
             print(student['grades'])
 
         elif command == 'c' and user_data["permissions"] == "admin":
-            new_schedule = change_student_schedule(
-                student, list(student['schedule']))
+            new_schedule, new_grades = change_student_schedule(
+                student['schedule'], student['grades'])
 
         elif command == 'e' and user_data["permissions"] == "admin":
             new_student = enroll_student()
