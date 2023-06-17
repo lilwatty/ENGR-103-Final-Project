@@ -33,19 +33,20 @@ def grade_change(student_schedule, grades, subject):
 
 #######################################################################
 # Function: Edit List
-# Description:
-# Parameters:
-# Return values:
-# Pre-Conditions:
-# Post-Conditions:
+# Description: Custom function that replaces a list value at a given index.
+# Parameters: New_grade, Index, and previous list.
+# Return values: New list.
+# Pre-Conditions: The passed values are lists or strings.
+# Post-Conditions: The updated grades will replace the previous grades.
 #######################################################################
 
 
-def edit(new_grade, period, list_grades):
+def edit_list(new_grade, period, list_grades):
 
+    # Type conversion to access list methods
     new_list = list(list_grades).copy()
     new_list.pop(period)
     new_list.insert(period, new_grade)
 
-    print("Grade successfully changed.")
+    print("Grade successfully changed.")  # Success
     return new_list
