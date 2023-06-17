@@ -3,7 +3,7 @@ from student_search import search_student
 from enroll_student import enroll_student
 from grade_change import grade_change
 <<<<<<< HEAD:main.py
-# from report_card_generator import display_report_card
+from report_card_generator import display_report_card
 from schedule_change import change_student_schedule
 =======
 from report_card_generator import display_report_card

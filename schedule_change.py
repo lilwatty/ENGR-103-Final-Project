@@ -1,11 +1,6 @@
-from test_main import student
+def change_student_schedule(student, classes):
 
-from data_generation.raw_data import classes
-
-
-def change_student_schedule(student_info, classes):
-
-    print(student_info.schedule)  # display the students schedule in array form
+    print(student['schedule'])  # display the students schedule in array form
 
     # user inputs what class they want to change
     old_class = int(input(
@@ -28,13 +23,13 @@ def change_student_schedule(student_info, classes):
             "Type in the index number of the class you want to change it to (keep in mind the first class is 0): "))
 
         # change the old class to the new one
-        student_info.schedule[old_class] = classes[new_class]
+        student['schedule'][old_class] = classes[new_class]
         # wipe student's grade data for that class slot
-        student_info.grades[old_class] = clear_grade
+        student['grades'][old_class] = clear_grade
 
     else:  # If the user enters an invalid input, inform them and exit the
 
         print("Invalid input")
 
 
-change_student_schedule(student)
+change_student_schedule(student,classes)
