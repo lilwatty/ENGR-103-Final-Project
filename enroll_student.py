@@ -2,17 +2,16 @@ from local_data.data import staff_registry, student_registry
 from generate_id import generate_id
 
 #######################################################################
-# Function:
-# Description:
-# Parameters:
-# Return values:
-# Pre-Conditions:
-# Post-Conditions:
+# Function: enroll_student
+# Description: prompts user for student information, assigns information to variables, compiles variables into dictionary formatted to match student registry
+# Parameters: None
+# Return values: student_profile
+# Pre-Conditions: enroll_student must be called
+# Post-Conditions: student profile with user inputs is returned
 #######################################################################
 
-
 def enroll_student():
-    while True:
+    while True: # assigns user inputs to variables and then asks user to verify
         first_name = input(
             "Enter New Student Information Below\nFirst Name: ")
         last_name = input("Last Name: ")
@@ -25,7 +24,7 @@ def enroll_student():
             pass
         elif user_decision == "y":
             break
-    student_profile = {
+    student_profile = { # dictionary formatted to match student profiles in student registry
         "first_name": first_name,
         "last_name": last_name,
         "ID": generate_id(),
@@ -38,26 +37,25 @@ def enroll_student():
     return student_profile
 
 #######################################################################
-# Function:
-# Description:
-# Parameters:
-# Return values:
-# Pre-Conditions:
-# Post-Conditions:
+# Function: create_schedule
+# Description: Continually prompts user to input student classes, stops when specified key is entered, creates blank grades to match schedule
+# Parameters: None
+# Return values: schedule and grades
+# Pre-Conditions: create_schedule must be called
+# Post-Conditions: schedule of user inputs is returned, equivalent amount of blank grades are returned
 #######################################################################
 
-
 def create_schedule():
-    schedule = []
+    schedule = [] # creating empty lists for schedule and grades
     grades = []
     while True:
-        if len(schedule) == 6:
+        if len(schedule) == 6: # sets maximum amount of classes
             break
         student_class = input(
             "Enter Classes (Input 'X' When Finalized): ")
-        if student_class == "X":
+        if student_class == "X": # stops asking user for inputs
             break
-        schedule.append(student_class)
-    for i in range(len(schedule)):
+        schedule.append(student_class) # adds inputs to list
+    for i in range(len(schedule)): # creates a matching amount of blank grades
         grades.append("_")
     return schedule, grades
