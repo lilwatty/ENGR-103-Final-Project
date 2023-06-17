@@ -1,33 +1,6 @@
-student = {
-    "first_name": "Adam",
-    "last_name": "Watson",
-    "ID": "934472703",
-    "sex": "Male",
-    "DOB": "04/20/1969",
-    "schedule": [
-        "English Literature",
-        "Biology",
-        "Chemistry",
-        "Computer Science",
-        "Calculus",
-        "Physics"
-    ],
-    "grades": [
-        "A",
-        "A",
-        "B+",
-        "A",
-        "A-",
-        "B+"
-    ],
-    "active": True
-}
-classes = ['Botany', 'Physics', 'Algebra', 'Rowing', 'PE', 'Choir']
+def change_student_schedule(student, classes):
 
-
-def change_student_schedule(student_info, classes):
-
-    print(classes)  # display the students schedule in array form
+    print(student['schedule'])  # display the students schedule in array form
 
     # user inputs what class they want to change
     old_class = int(input(
@@ -50,13 +23,13 @@ def change_student_schedule(student_info, classes):
             "Type in the index number of the class you want to change it to (keep in mind the first class is 0): "))
 
         # change the old class to the new one
-        student_info.schedule[old_class] = classes[new_class]
+        student['schedule'][old_class] = classes[new_class]
         # wipe student's grade data for that class slot
-        student_info.grades[old_class] = clear_grade
+        student['grades'][old_class] = clear_grade
 
     else:  # If the user enters an invalid input, inform them and exit the
 
         print("Invalid input")
 
 
-change_student_schedule(student, student['schedule'])
+change_student_schedule(student, classes)
