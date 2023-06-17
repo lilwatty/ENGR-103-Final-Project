@@ -14,15 +14,15 @@ def enroll_student():
     while True: # assigns user inputs to variables and then asks user to verify
         first_name = input(
             "Enter New Student Information Below\nFirst Name: ")
-        last_name = input("Last Name: ")
+        last_name = input("Last Name: ") # asks for first and last name
         sex = input("Gender: ")
-        dob = input("Date-Of-Birth: ")
+        dob = input("Date-Of-Birth: ") # more information on new student
         schedule, grades = create_schedule()
         user_decision = input(
-            "Please Verify New Student Information\nFinalize New Student Profile? (y/n): ")
-        if user_decision == "n":
+            "Please Verify New Student Information\nFinalize New Student Profile? (y/n): ") #asking for confirmation
+        if user_decision == "n": # passes through 
             pass
-        elif user_decision == "y":
+        elif user_decision == "y": # completes enrollment
             break
     student_profile = { # dictionary formatted to match student profiles in student registry
         "first_name": first_name,
@@ -32,7 +32,7 @@ def enroll_student():
         "DOB": dob,
         "schedule": schedule,
         "grades": grades,
-        "active": True,
+        "active": True, # adds all information and sets student active
     }
     return student_profile
 
