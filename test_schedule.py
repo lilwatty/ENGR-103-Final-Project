@@ -10,7 +10,7 @@ def change_student_schedule(student):
         "Type in the index number of the class you want to change (keep in mind the first class is 0): "))
 
     # user confirms that they want to change the class
-    confirmation = str(input(
+    confirmation = (input(
         "Are you sure you want to change this class? The student's grade data will be lost. yes or no: "))
 
     if (confirmation.lower() == "no"):  # If the user inputs no, exits the function
@@ -25,10 +25,11 @@ def change_student_schedule(student):
         new_class = int(input(
             "Type in the index number of the class you want to change it to (keep in mind the first class is 0): "))
 
-        # change the old class to the new one
-        student['schedule'][old_class] = classes[new_class]
-        # wipe student's grade data for that class slot
-        student['grades'][old_class] = clear_grade
+        schedule = list(student['schedule'])
+        schedule.pop(int(old_class))
+        schedule.insert(new_class, classes[new_class])
+        print(f'New Schedule: {schedule}')
+        return schedule
 
     else:  # If the user enters an invalid input, inform them and exit the
 

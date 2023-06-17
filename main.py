@@ -24,7 +24,7 @@ quick_login = [
         "first_name": "Daniel",
         "last_name": "Perez",
         "subject": "Physics",
-        "permissions": "teacher"
+        "permissions": "admin"
     },
 ]
 
@@ -50,11 +50,11 @@ def main():
             grade_list = grade_change(
                 student['schedule'], student["grades"], user_data['subject'])
             student['grades'] = grade_list
-            print(student['grades'])
 
         elif command == 'c' and user_data["permissions"] == "admin":
-            new_schedule, new_grades = change_student_schedule(
+            new_schedule = change_student_schedule(
                 student)
+            student['schedule'] = new_schedule
 
         elif command == 'e' and user_data["permissions"] == "admin":
             new_student = enroll_student()
