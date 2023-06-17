@@ -1,7 +1,7 @@
 from local_data.data import convert_json_to_list
 from display_commands import display_commands
 
-# from schedule_change import change_student_schedule
+from test_schedule import change_student_schedule
 from final_report_card import display_report_card
 
 from student_search import search_student
